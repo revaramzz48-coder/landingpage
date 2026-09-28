@@ -3,7 +3,6 @@
    ========================================================= */
 
 :root{
-  
   --blue: #1E7B4F;
   --blue-2: #17633F;
   --blue-deep: #0F4A2E;
@@ -66,7 +65,6 @@ a{ color: inherit; text-decoration: none; }
 
 ::selection{ background: var(--gold-light); color: var(--navy); }
 
-/* Focus visibility */
 a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
   outline: 2px solid var(--gold);
   outline-offset: 3px;
@@ -162,7 +160,7 @@ section{ padding: 92px 0; }
   transition: background 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
 }
 .navbar.scrolled{
-   background: rgba(23, 99, 63, 0.96);
+  background: rgba(23, 99, 63, 0.96);
   box-shadow: 0 8px 20px rgba(15,74,46,0.22);
   backdrop-filter: blur(8px);
   padding: 13px 0;
@@ -194,6 +192,15 @@ section{ padding: 92px 0; }
   flex-shrink: 0;
 }
 
+.brand-logo{
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  transition: height 0.3s ease;
+}
+.navbar.scrolled .brand-logo{ height: 55px; }
+
 .nav-links{
   display: flex;
   align-items: center;
@@ -219,6 +226,9 @@ section{ padding: 92px 0; }
 }
 .nav-links a:hover{ color: var(--white); }
 .nav-links a:hover::after{ width: 100%; }
+
+/* Tombol CTA di dalam menu (hanya tampil di mobile) */
+.nav-links-cta{ display: none; }
 
 .nav-cta{ display: flex; align-items: center; gap: 14px; }
 
@@ -363,9 +373,7 @@ section{ padding: 92px 0; }
 }
 
 /* =========== About =========== */
-.about{
-  background: var(--cream);
-}
+.about{ background: var(--cream); }
 .about-grid{
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
@@ -553,9 +561,7 @@ section{ padding: 92px 0; }
 /* =========== Testimonials =========== */
 .testimonials{ background: var(--cream); }
 .testi-wrap{ position: relative; max-width: 760px; margin: 0 auto; }
-.testi-track{
-  overflow: hidden;
-}
+.testi-track{ overflow: hidden; }
 .testi-slides{
   display: flex;
   transition: transform 0.5s cubic-bezier(.65,0,.35,1);
@@ -712,29 +718,56 @@ footer{ background: var(--navy); color: rgba(255,255,255,0.72); padding: 70px 0 
   .hero-visual{ order: -1; }
   .hero-photo img{ height: 300px; }
   .service-row{ grid-template-columns: 1fr 1fr; }
-  .service-item{ border-right: none; border-bottom: 1px solid rgba(255,255,255,0.12); padding-bottom: 28px; padding-top: 28px; }
+  .service-item{ border-right: none; border-bottom: 1px solid rgba(30,42,68,0.12); padding-bottom: 28px; padding-top: 28px; }
   .pkg-grid{ grid-template-columns: 1fr 1fr; }
   .gallery-grid{ grid-template-columns: repeat(3, 1fr); }
   .footer-grid{ grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 720px){
-  .nav-links, .nav-cta .btn-outline-light{ display: none; }
+  /* --- Navbar mobile --- */
+  .nav-cta{ display: none; }              /* Masuk + Mulai Perjalanan di bar atas disembunyikan */
   .nav-toggle{ display: flex; }
-  .navbar.mobile-open .nav-links{
+  .brand-logo{ height: 48px; }
+  .navbar.scrolled .brand-logo{ height: 44px; }
+
+  .nav-links{ display: none; }            /* menu tertutup */
+
+  .navbar.mobile-open .nav-links{         /* menu terbuka */
     display: flex;
     flex-direction: column;
+    align-items: stretch;
     position: absolute;
     top: 100%; left: 0; right: 0;
     background: var(--navy);
     padding: 20px 28px 26px;
     gap: 18px;
   }
+  .navbar.mobile-open .nav-links li{ text-align: center; }
+
+  /* Tombol Mulai Perjalanan: paling bawah & full width */
+  .navbar.mobile-open .nav-links li.nav-links-cta{
+    display: block;
+    width: 100%;
+    margin-top: 6px;
+  }
+  .navbar.mobile-open .nav-links li.nav-links-cta a.btn{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 1rem;
+    color: var(--blue-deep);
+  }
+  .navbar.mobile-open .nav-links li.nav-links-cta a.btn::after{ display: none; }
+  .navbar.mobile-open .nav-links li.nav-links-cta a.btn:hover{ color: var(--blue-deep); }
+
+  /* --- Section lain --- */
   section{ padding: 64px 0; }
   .hero{ padding: 130px 0 80px; }
   .feature-list{ grid-template-columns: 1fr; }
   .service-row{ grid-template-columns: 1fr; }
-  .service-item{ border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.12); padding: 24px 0 !important; }
+  .service-item{ border-right: none !important; border-bottom: 1px solid rgba(30,42,68,0.12); padding: 24px 0 !important; }
   .pkg-grid{ grid-template-columns: 1fr; }
   .gallery-grid{ grid-template-columns: 1fr 1fr; grid-auto-rows: 130px; }
   .footer-grid{ grid-template-columns: 1fr; }
