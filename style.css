@@ -3,27 +3,27 @@
    ========================================================= */
 
 :root{
-  /* Biru cerah sebagai warna utama (bukan gelap), lembut & ramah untuk dibaca */
-  --blue: #3E5FE3;
-  --blue-2: #2C48C4;
-  --blue-deep: #23399E;
-  --blue-soft: #EEF3FF;
-  --blue-soft-2: #E1EAFE;
+  
+  --blue: #1E7B4F;
+  --blue-2: #17633F;
+  --blue-deep: #0F4A2E;
+  --blue-soft: #EEF7F1;
+  --blue-soft-2: #DDEEE3;
 
-  /* Aksen hangat */
-  --orange: #FF7A29;
-  --orange-light: #FFB27A;
-  --green: #2E8B6B;
+  /* Aksen emas */
+  --orange: #C99A1E;
+  --orange-light: #F0D48A;
+  --green: #1F8A5B;
 
   /* Netral terang */
-  --cream: #FCFBF8;
+  --cream: #FCFBF6;
   --white: #FFFFFF;
-  --ink: #1E2A44;
-  --muted: #5B6478;
-  --muted-light: #7C89A3;
+  --ink: #16302A;
+  --muted: #55655E;
+  --muted-light: #8FA69B;
 
-  /* dipertahankan agar kompatibel, kini memakai nuansa biru bukan navy gelap */
-  --navy: #1E2A44;
+  /* Hijau tua untuk heading & footer, emas untuk aksen */
+  --navy: #12352A;
   --navy-2: var(--blue-soft);
   --gold: var(--orange);
   --gold-light: var(--orange-light);
@@ -130,9 +130,9 @@ section{ padding: 92px 0; }
 .btn:hover{ transform: translateY(-2px); }
 
 .btn-gold{
-  background: linear-gradient(135deg, #EAF1FF, #CFDFFF);
+  background: linear-gradient(135deg, #F3DC93, #D4AF37);
   color: var(--blue-deep);
-  box-shadow: 0 10px 24px rgba(44,72,196,0.28);
+  box-shadow: 0 10px 24px rgba(15,74,46,0.28);
 }
 .btn-gold:hover{ background: var(--white); }
 
@@ -157,15 +157,15 @@ section{ padding: 92px 0; }
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  background: rgba(44, 72, 196, 0.0);
+  background: rgba(23, 99, 63, 0.0);
   padding: 22px 0;
   transition: background 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
 }
 .navbar.scrolled{
-  background: rgba(44, 72, 196, 0.96);
+   background: rgba(23, 99, 63, 0.96);
+  box-shadow: 0 8px 20px rgba(15,74,46,0.22);
   backdrop-filter: blur(8px);
   padding: 13px 0;
-  box-shadow: 0 8px 20px rgba(44,72,196,0.22);
 }
 .navbar .container{
   display: flex;
@@ -546,7 +546,7 @@ section{ padding: 92px 0; }
   margin-top: 12px;
   font-size: 0.85rem;
   color: var(--blue);
-  border-bottom: 1px solid rgba(62,95,227,0.3);
+  border-bottom: 1px solid rgba(30,123,79,0.3);
 }
 .product-info a:hover{ color: var(--blue-deep); border-color: var(--blue-deep); }
 
