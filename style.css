@@ -726,14 +726,13 @@ footer{ background: var(--navy); color: rgba(255,255,255,0.72); padding: 70px 0 
 
 @media (max-width: 720px){
   /* --- Navbar mobile --- */
-  .nav-cta{ display: none; }              /* Masuk + Mulai Perjalanan di bar atas disembunyikan */
+  .nav-cta{ display: none; }              
   .nav-toggle{ display: flex; }
   .brand-logo{ height: 48px; }
   .navbar.scrolled .brand-logo{ height: 44px; }
 
-  .nav-links{ display: none; }            /* menu tertutup */
-
-  .navbar.mobile-open .nav-links{         /* menu terbuka */
+  .nav-links{ display: none; }            
+  .navbar.mobile-open .nav-links{         
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -745,7 +744,7 @@ footer{ background: var(--navy); color: rgba(255,255,255,0.72); padding: 70px 0 
   }
   .navbar.mobile-open .nav-links li{ text-align: center; }
 
-  /* Tombol Mulai Perjalanan: paling bawah & full width */
+    /* Tombol CTA di menu mobile: full width */
   .navbar.mobile-open .nav-links li.nav-links-cta{
     display: block;
     width: 100%;
@@ -757,11 +756,23 @@ footer{ background: var(--navy); color: rgba(255,255,255,0.72); padding: 70px 0 
     width: 100%;
     padding: 14px 20px;
     font-size: 1rem;
-    color: var(--blue-deep);
   }
   .navbar.mobile-open .nav-links li.nav-links-cta a.btn::after{ display: none; }
-  .navbar.mobile-open .nav-links li.nav-links-cta a.btn:hover{ color: var(--blue-deep); }
-
+  .navbar.mobile-open .nav-links li.nav-links-cta a.btn-outline-light{
+    color: var(--white);
+    border: 1.5px solid rgba(255,255,255,0.7);
+  }
+  .navbar.mobile-open .nav-links li.nav-links-cta a.btn-outline-light:hover{
+    color: var(--white);
+    background: rgba(255,255,255,0.12);
+    border-color: var(--white);
+  }
+  .navbar.mobile-open .nav-links li.nav-links-cta a.btn-gold{
+    color: var(--blue-deep);
+  }
+  .navbar.mobile-open .nav-links li.nav-links-cta a.btn-gold:hover{
+    color: var(--blue-deep);
+  }
   /* --- Section lain --- */
   section{ padding: 64px 0; }
   .hero{ padding: 130px 0 80px; }
